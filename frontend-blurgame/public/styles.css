@@ -1,0 +1,16 @@
+.roundPic{
+    max-width: 80vw;
+    max-height: 50vh;
+}
+
+.jumbotron{
+    margin-top: 2%;
+}
+
+.genreicons{
+    display: inline-block;
+    max-height: 7vh;
+    max-width: 7vw;
+    margin-left: 1%;
+    margin-right: 1%;
+}

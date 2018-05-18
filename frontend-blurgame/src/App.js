@@ -2,12 +2,21 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import {Route, Link, Switch, Redirect} from 'react-router-dom';
+import Home from './Home';
+import GamePage from './GamePage';
 
 export default class App extends Component {
   constructor(){
     super();
     this.state = {
-      gameContent: {}
+      gameContent: {tv:[
+        {
+        img: "/brooklyn.jpg",
+        choices:[
+            "Brooklyn 99", "The Tudors", "Criminal Minds", "CSI"
+        ]
+        }
+    ]}
     }
   }
 
@@ -24,16 +33,14 @@ export default class App extends Component {
 
   render() {
     // if statements for conditional rendering dependent upon user choice
-    
-    console.log(this.state.gameContent);
     return (
-      <div className="App">
+      <div className="App container">
 
 
-        {/* <Switch>
-          <Route path='/' render={()=>{return <Home gameContent={this.state}/>}} />
-          <Route path='/gamepage' render={()=>{return <GamePage />}} />
-        </Switch>         */}
+        <Switch>
+          <Route exact path='/' render={()=>{return <Home />}} />
+          <Route path='/gamepage' render={()=>{return <GamePage gameContent={this.state.gameContent} />}} />
+        </Switch>        
       </div>
     );
   }
