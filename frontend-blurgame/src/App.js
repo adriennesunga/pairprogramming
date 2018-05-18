@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import {Route, Link, Switch, Redirect} from 'react-router-dom';
 
-class App extends Component {
+export default class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      gameContent: {}
+    }
+  }
+
+  componentDidMount(){
+    // Axios.get database from backend and put into state
+    axios.get('http://localhost:8080/gamecontent')
+         .then(result=>{
+           this.setState({
+            gameContent: result.data
+           });
+         });
+  };
+
+
   render() {
+    // if statements for conditional rendering dependent upon user choice
+    
+    console.log(this.state.gameContent);
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+
+        {/* <Switch>
+          <Route path='/' render={()=>{return <Home gameContent={this.state}/>}} />
+          <Route path='/gamepage' render={()=>{return <GamePage />}} />
+        </Switch>         */}
       </div>
     );
   }
 }
-
-export default App;
