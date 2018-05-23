@@ -16,7 +16,17 @@ const gameContent = {
         {
         img: "/brooklyn.jpg",
         choices:[
-            "Brooklyn 99", "The Tudors", "Criminal Minds", "CSI"
+            {name: "Brooklyn 99",
+            isCorrect: true
+            },
+            {name: "The Tudors",
+            isCorrect: false
+            }, 
+            {name: "Criminal Minds",
+            isCorrect: false},
+            {name: "CSI",
+            isCorrect:false
+            }
         ]
         }
     ],
@@ -24,7 +34,17 @@ const gameContent = {
         {
         img: "/jp.jpg",
         choices:[
-            "The Fly", "The Grand Budapest Hotel", "Jurassic Park", "Annie Hall"
+            {name: "The Fly",
+            isCorrect: false
+            },
+            {name: "The Grand Budapest Hotel",
+            isCorrect: false
+            }, 
+            {name: "Jurassic Park",
+            isCorrect: true},
+            {name: "Annie Hall",
+            isCorrect:false
+            }
         ]
         }
     ],
@@ -32,7 +52,17 @@ const gameContent = {
         {
         img: "/cardi2.jpg",
         choices:[
-            "Beyonce", "Cardi B", "Brandy", "Left-Eye"
+            {name: "Beyonce",
+            isCorrect: false
+            },
+            {name: "Cardi B",
+            isCorrect: true
+            }, 
+            {name: "Brandy",
+            isCorrect: false},
+            {name: "Left-Eye",
+            isCorrect:false
+            }
         ]
         }
     ]
