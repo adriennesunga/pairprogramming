@@ -3,14 +3,14 @@ import {Link} from 'react-router-dom';
 
 export default class Home extends React.Component{
 
-    selecttv(){
-        this.props.handleClick('tv')
+    selecttv = () => {
+        this.props.genreSelect('tv')
     }
-    selectmovies(){
-        this.props.handleClick('movies')
+    selectmovies = () => {
+        this.props.genreSelect('movies')
     }
-    selectmusic(){
-        this.props.handleClick('music')
+    selectmusic = () => {
+        this.props.genreSelect('music')
     }
 
     render(){
@@ -21,11 +21,11 @@ export default class Home extends React.Component{
                     <p>Choose Your Genre</p>
 
                     {/* here we are calling a unique function for each genre */}
-                    <Link to="/gamepage"> <input onClick={this.selecttv.bind(this)} className='genreicons' type="image" alt='tv' src='/tv.svg'/> </Link>
+                    <Link to="/gamepage"> <input onClick={this.selecttv} gameContent={this.props.gameContent}  className='genreicons' type="image" alt='tv' src='/tv.svg'/> </Link>
 
-                    <Link to="/gamepage"> <input onClick={this.selectmovies.bind(this)} className='genreicons' type="image" alt='movies' src='/movie.svg'/> </Link>
+                    <Link to="/gamepage"> <input onClick={this.selectmovies} gameContent={this.props.gameContent}  className='genreicons' type="image" alt='movies' src='/movie.svg'/> </Link>
 
-                    <Link to="/gamepage"> <input onClick={this.selectmusic.bind(this)} className='genreicons' type="image" alt='music' src='/music.svg'/> </Link>
+                    <Link to="/gamepage"> <input onClick={this.selectmusic} gameContent={this.props.gameContent} className='genreicons' type="image" alt='music' src='/music.svg'/> </Link>
                 </div>
     };
 };

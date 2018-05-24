@@ -16,8 +16,8 @@ export default class App extends Component {
     }
 
   }
-  //function that sets the state of genre to a value, and is waiting to be called
-  handleClick = val => {
+  //Click handler that sets the state of genre to a value, and is called from 'Home'
+  genreSelect = val => {
     this.setState({
       genre: val
     })
@@ -32,7 +32,6 @@ export default class App extends Component {
             gameContent: result.data
            });
          });
-         
   };
 
 
@@ -48,7 +47,7 @@ export default class App extends Component {
     return (
       <div className="App container">
         <Switch>
-          <Route exact path='/' render={()=>{return <Home handleClick={this.handleClick} />}} />
+          <Route exact path='/' render={()=>{return <Home genreSelect={this.genreSelect} gameContent={this.state.gameContent}/>}} />
           {game}
         </Switch>        
       </div>
