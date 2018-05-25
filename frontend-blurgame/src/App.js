@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import {Route, Link, Switch, Redirect} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import Home from './Home';
 import GamePage from './GamePage';
 
