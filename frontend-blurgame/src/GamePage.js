@@ -5,51 +5,60 @@ export default class GamePage extends React.Component{
         super();
         this.state = {
             round: 1,
-            imageClass: 1,
-            nextButtonValidate: true
+            nextButtonValidate: true,
+            attempts: 0
         }
     }
 
     checkIfCorrect = (val) => {
         if(val !== true) {
-            this.setState({
-                imageClass: this.state.imageClass+1,
-            });
-        }
-        else {
-            // alert("you win!")
-            
-            // NEED TO WORK ON THIS LOGIC -- BUTTON NOT STAYING DISABLED AT THIRD ROUND CORRECT GUESS
-                // Maybe need to do a ternary inline
-            if(this.state.round > 3){
+            if (this.state.attempts < 3){
                 this.setState({
-                    nextButtonValidate: true
+                    attempts: this.state.attempts+1
                 });
             }
-            else if (this.state.round <=3) {
+            else{
                 this.setState({
-                    nextButtonValidate: false
-                });
-            };
+                    attempts: this.state.attempts
+                })
+            }
+            // if attempts are < 3 then add else 
+            // if = > 3 , then nothing else will change
+        }
+        else {
+            this.setState({
+                nextButtonValidate: false,
+                attempts: null
+            });
         };
     };
     
     nextButton = () => {
         this.setState({
             round: this.state.round + 1,
-            nextButtonValidate: true //resets button to disabled for the next round
+            nextButtonValidate: true, //resets button to disabled for the next round
+            attempts:0
         });
     };
 
     render(){
-        let currentRoundInfo = this.props.gameContent[this.state.round-1];
-        let choicesJSX = currentRoundInfo.choices.map((choice) =>{
-            return <button className="choiceButton" onClick={()=>{this.checkIfCorrect(choice.isCorrect)}}>{choice.name}</button>
-        });
-        return  <div>
-                    <img className={this.state.imageClass} className="roundPic" src={currentRoundInfo.img} alt='Image cannot be displayed'/>
-                    {choicesJSX}
-                    <button disabled={this.state.nextButtonValidate} className="nextButton" onClick={this.nextButton}>Next Round</button>
-                </div>
-    }
+        if (this.state.round < 4){
+            let currentRoundInfo = this.props.gameContent[this.state.round-1];
+            let choicesJSX = currentRoundInfo.choices.map((choice) =>{
+                return <button disabled={this.state.attempts !== null ? false : true} className="choiceButton" onClick={()=>{this.checkIfCorrect(choice.isCorrect)}}>{choice.name}</button>
+            });
+            
+            return  <div>
+                        <img className={"roundPic round" + this.state.attempts} src={currentRoundInfo.img} alt='Image cannot be displayed'/>
+                        {choicesJSX}
+                        <button disabled={this.state.nextButtonValidate} className="nextButton" onClick={this.nextButton}>Next Round</button>
+                    </div>
+        }
+        else{
+            return <div>
+                        <p>Game Over!</p>
+                        <a href="/">Go back Home</a>
+                    </div>
+        }
+    };
 }

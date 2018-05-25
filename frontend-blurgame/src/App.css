@@ -26,3 +26,16 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.round0 {
+  filter: blur(15px);
+}
+.round1 {
+  filter: blur(12px);
+}
+.round2 {
+  filter: blur(10px);
+}
+.round3 {
+  filter: blur(6px);
+}
