@@ -1,4 +1,6 @@
 import React from 'react';
+import './App.css';
+import App from './App';
 
 export default class GamePage extends React.Component{
     constructor(){
@@ -54,22 +56,22 @@ export default class GamePage extends React.Component{
             let currentRoundInfo = this.props.gameContent[this.state.round-1];
             let choicesJSX = currentRoundInfo.choices.map((choice) =>{
                 return <div>
-                            <button disabled={this.state.attempts !== null ? false : true} className="choiceButton" onClick={()=>{this.checkIfCorrect(choice.isCorrect)}}>{choice.name}</button>
+                            <button type="button" disabled={this.state.attempts !== null ? false : true} className="choiceButton btn btn-outline-primary" onClick={()=>{this.checkIfCorrect(choice.isCorrect)}}>{choice.name}</button>
                             <audio id='audio' src={this.state.audioSrc}></audio>
                         </div>
             });
             
             return  <div>
-                        <h1>Round {this.state.round}</h1>
-                        <img className={"img-fluid round" + this.state.attempts} src={currentRoundInfo.img} alt=""/>
+                        {/* <h1>Round {this.state.round}</h1> */}
+                        <img className={"imagesize img-fluid round" + this.state.attempts} src={currentRoundInfo.img} alt=""/>
                         {choicesJSX}
                         <button disabled={this.state.nextButtonValidate} className="nextButton" onClick={this.nextButton}>Next Round</button>
                     </div>
         }
         else{
             return <div>
-                        <p>Game Over!</p>
-                        <a href="/">Go back Home</a>
+                        <p className="gameover">Game Over!</p>
+                        <a className="playagain" href="/">Play Again?</a>
                         <audio src="/GO.mp3" autoPlay></audio>
                     </div>
         }

@@ -25,7 +25,7 @@ const gameContent = {
             {name: "Criminal Minds",
             isCorrect: false
             },
-            {name: "CSI",
+            {name: "Graeme's 25th Birthday at Burger King",
             isCorrect:false
             }
         ]
@@ -56,7 +56,7 @@ const gameContent = {
                 {name: "Game of Thrones",
                 isCorrect: true
                 }, 
-                {name: "Supernatural",
+                {name: "Ian Katsuno's First Perm",
                 isCorrect: false
                 },
                 {name: "Vikings",
@@ -120,6 +120,23 @@ const gameContent = {
     ],
     music:[
         {
+            img: "/TAYLOR-SWIFT.jpg",
+            choices:[
+                {name: "Dani Subject",
+                isCorrect: false
+                },
+                {name: "Taylor Swift",
+                isCorrect: true
+                }, 
+                {name: "Christina Aguilera",
+                isCorrect: false
+                },
+                {name: "Madonna",
+                isCorrect:false
+                }
+            ]
+        },
+        {
             img: "/cardi2.jpg",
             choices:[
                 {name: "Beyonce",
@@ -132,23 +149,6 @@ const gameContent = {
                 isCorrect: false
                 },
                 {name: "Left-Eye",
-                isCorrect:false
-                }
-            ]
-        },
-        {
-            img: "/TAYLOR-SWIFT.jpg",
-            choices:[
-                {name: "Taylor Swift",
-                isCorrect: true
-                },
-                {name: "Miley Cyrus",
-                isCorrect: false
-                }, 
-                {name: "Dani Subject",
-                isCorrect: false
-                },
-                {name: "Christina Aguilera",
                 isCorrect:false
                 }
             ]

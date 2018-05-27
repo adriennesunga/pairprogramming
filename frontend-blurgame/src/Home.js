@@ -20,8 +20,8 @@ export default class Home extends React.Component{
 
     render(){
         return  <div className="jumbotron">
-                    <h1 className="display-4">Welcome to the Game!</h1>
-                    <p className="lead">Picture Blur</p>
+                    <h1 className="display-4">PHOTO BLUR</h1>
+                    {/* <p className="lead">Picture Blur</p> */}
                     <hr className="my-4" />
                     <p>Choose Your Genre</p>
 

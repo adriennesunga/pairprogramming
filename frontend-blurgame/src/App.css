@@ -28,14 +28,51 @@
 }
 
 .round0 {
-  filter: blur(15px);
+  filter: blur(15px) saturate(7);
+  
 }
 .round1 {
-  filter: blur(12px);
+  filter: blur(12px) saturate(5);
 }
 .round2 {
-  filter: blur(10px);
+  filter: blur(10px) saturate(3);
 }
 .round3 {
-  filter: blur(6px);
+  filter: blur(6px) saturate(1);
+}
+
+.gameover{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 5em;
+  margin-top: 200px;
+  color: black;
+}
+
+.playagain{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1em;
+}
+
+.imagesize {
+  margin-top:2em;
+  margin-bottom:2em;
+  height: 30em;
+  width: 50em;
+}
+
+body {
+  background: linear-gradient(#FFFEFF, #D7FFFE);
+  background-size: cover;
+  width: 100%;
+  min-height:100vh;
+}
+
+.jumbotron{
+  background-color:#f6f6f6;
+  border-radius: 20px;
+}
+
+.display-4{
+  font-family: 'Faster One', cursive;
+  font-size: 7em;
 }
