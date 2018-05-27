@@ -11,7 +11,7 @@ export default class App extends Component {
 
     // when you initialize app, there's no genre yet
     this.state = {
-      genre : null,
+      genre : 'tv',
       gameContent : null
     }
 
